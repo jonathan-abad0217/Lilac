@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>LILAC Dashboard</title>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/dashboard.css') }} ">
+   <!-- <link rel="stylesheet" href="D:/OneDrive/Desktop/Thesis/static/css/dashboardd.css"> -->
+
+</head>
+
+<body>
+
+
+<div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                    LILAC Control Panel
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('dashboard')}}">Overview</a>
+            </li>
+            <li>
+                <a href="{{ url_for('controller')}}">Controller</a>
+            </li>
+            <li>
+                <a href="#">Scheduler</a>
+            </li>
+            <li>
+                <a href="{{ url_for('logout')}}">Logout</a>
+            </li>
+           
+
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <h1>Logged In Successfully {{ email }}</h1>
+            <p>The proponents designed a machine with the two disinfecting devices integrated and working in synergy namely: a UVC lamp component
+                 and a customized air disinfectant fogger. In effect, the sensor-based Machine possesses the capacity to disinfect a wide area scope
+                  while still ensuring safety and utmost quality. Trials will be done to improve the final design. The proponents along with field practitioners are to evaluate the efficacy and practicality of the Sensor Based Disinfection Machine named LILAC. The name LILAC came from the lilac flower which is sometimes color white and violet. Lilac flower symbolizes purity and innocence, so we relate purity to the disinfection process that will be done by LILAC.</p>
+<button id="menu-toggle" class="btn btn-secondary"><i id="toggleIcon" class="fa fa-angle-double-down"></i> Toggle Menu <i class="fa fa-
+
+filter"></i></button>                
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+<div class="footer">
+    <p>Footer</p>
+  </div>
+
+<script>
+    $("#menu-toggle").click(function(e) {
+ e.preventDefault();
+  var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
+  
+
+      
+
+
+
+        $("#toggleIcon").toggleClass("fa fa-angle-double-down fa fa-angle-double-up")
+        $("#wrapper").toggleClass("toggled");
+
+    if(isIE11){
+          if($("#wrapper").hasClass("toggled")){
+      $('#sidebar-wrapper').css("margin-left", "-268px")
+    } else {
+      $('#sidebar-wrapper').css("margin-left", "-250px")  
+          }  
+  }
+    });
+</script>
+</body>
+</html>
